@@ -1,0 +1,32 @@
+Symbol Table
+Symbol	Size	Line	D/UD	Value
+four	4	2	Defined	4
+numArray	20	3	Defined	20,30,40,50,-1
+msg	14	4	Defined	"sumedha jagtap"
+p	8	5	Defined	10.0
+
+
+Literal table
+Number	Value	LineNo	HexValue
+1	0	14	0
+2	a	22	0x61
+3	-1	23	1
+4	8	27	8
+
+
+Intermediate code
+lineCnt	Address	Instruction		   operand1			operand2
+13	000004	('xor', 209)		('ecx', 'reg32')	,	('ecx', 'reg32')
+14	000010	('mov', 145)		('sum', '#sym6')	,	('0', '#lit1')
+16	000016	('mov', 141)		('ebx', 'reg32')	,	('numArray', '#sym2')
+17	000020	('mov', 141)		('eax', 'reg32')	,	('eax', 'reg32')
+18	000026	('mov', 141)		('eax', 'reg32')	,	('four', '#sym1')
+19	000028	('mul', 120)		('ecx', 'reg32')
+20	000032	('jmp', 175)		('l4', '#sym9')
+21	000036	('add', 93)		('ebx', 'reg32')	,	('eax', 'reg32')
+22	000042	('mov', 144)		('edx', 'reg32')	,	('a', '#lit2')
+23	000048	('cmp', 170)		('ebx', 'reg32')	,	('-1', '#lit3')
+24	000052	('jz', 178)		('loop', '#sym8')
+25	000056	('push', 149)		('msg', '#sym3')
+27	000062	('add', 96)		('esp', 'reg32')	,	('8', '#lit4')
+28	000066	('jmp', 175)		('l2', '#sym10')
